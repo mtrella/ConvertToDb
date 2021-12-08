@@ -7,5 +7,6 @@ namespace ConvertToDb.DataModels
     {
         public long Id { get; set; }
         public string Name { get; set; }
+
     }
 }
