@@ -53,8 +53,6 @@ namespace ConvertToDb
                             movie = movie.Where(x => x.Title.Contains(searchString));
                             movie.ToList().ForEach(x=>x.Display());
                         }
-                        
-                        return;
                     }
                 }
                 else if (choice == "2")
@@ -90,7 +88,8 @@ namespace ConvertToDb
                     using (var db = new MovieContext())
                     {
                         var updateMovie = db.Movies.FirstOrDefault(x => x.Title == m3);
-                        System.Console.WriteLine($"({updateMovie.Id}) {updateMovie.Title}");
+                        System.Console.WriteLine($"Old Title: ({updateMovie.Id}) {updateMovie.Title}");
+                        System.Console.WriteLine($"Updated Title: ({updateMovie.Id}) {movieUpdate}");
 
                         updateMovie.Title = movieUpdate;
 
@@ -164,7 +163,7 @@ namespace ConvertToDb
 
                         foreach (var user in newUsers)
                         {
-                            System.Console.WriteLine($"(Id:{newUser.Id}) Age:{newUser.Age} Gender:{newUser.Gender} Occupation:{occupation.Name}");
+                            System.Console.WriteLine($"(Id: {newUser.Id}) Age: {newUser.Age} Gender: {newUser.Gender} Occupation: {occupation.Name}");
                         }
                     }
                     logger.Info("Program has added a new user, with occupation");
