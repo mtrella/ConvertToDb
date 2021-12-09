@@ -53,6 +53,7 @@ namespace ConvertToDb
                             movie = movie.Where(x => x.Title.Contains(searchString));
                             movie.ToList().ForEach(x=>x.Display());
                         }
+                        
                         return;
                     }
                 }
@@ -163,7 +164,7 @@ namespace ConvertToDb
 
                         foreach (var user in newUsers)
                         {
-                            System.Console.WriteLine($"(Age:{newUser.Id}) Age:{newUser.Age} Gender:{newUser.Gender} Occupation:{occupation.Name}");
+                            System.Console.WriteLine($"(Id:{newUser.Id}) Age:{newUser.Age} Gender:{newUser.Gender} Occupation:{occupation.Name}");
                         }
                     }
                     logger.Info("Program has added a new user, with occupation");
